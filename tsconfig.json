@@ -1,0 +1,6 @@
+{
+	"extends": "eslint-config-bamboo",
+	"compilerOptions": {
+		"target": "ESNext"
+	}
+}
