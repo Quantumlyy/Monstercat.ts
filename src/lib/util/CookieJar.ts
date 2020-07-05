@@ -10,17 +10,19 @@ export class CookieJar<K, V = string> extends Map<K, V> {
 	}
 
 	public stringify(): string {
-		return [...this.entries()].map(([k, v]) => String(v) === CookieJar.EMPTY_FILLER ? k : `${k}=${v}`).join('; ');
+		return [...this.entries()]
+			.map(([k, v]) => String(v) === CookieJar.EMPTY_FILLER ? k : `${k}=${v}`).join('; ');
 	}
 
 	public static readonly EMPTY_FILLER = String.fromCharCode(167);
 
 	public static create(headers: Headers): CookieJar<string> {
-		const rawCookies = headers.raw()['set-cookie'];
-		const cookieArray = rawCookies.flatMap(entry => entry.split('; '));
-		const cookiesTupples = cookieArray.map(entry => entry.split('=')) as Array<[string, string]>;
+		const cookies = headers
+			.raw()['set-cookie']
+			.flatMap(entry => entry.split('; '))
+			.map(entry => entry.split('=')) as Array<[string, string]>;
 
-		return new CookieJar<string>(cookiesTupples);
+		return new CookieJar<string>(cookies);
 	}
 
 }
