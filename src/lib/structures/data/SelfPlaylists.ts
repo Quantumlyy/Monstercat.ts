@@ -33,10 +33,10 @@ export interface ISelfPlaylistsResult {
 	tracks: null;
 }
 
-export class SelfPlaylistsResult {
+export class SelfPlaylistsResult implements ISelfPlaylistsResult {
 
 	@enumerable(false)
-	private readonly data: ISelfPlaylistsResult;
+	protected readonly data: ISelfPlaylistsResult;
 
 	public readonly deleted!: boolean;
 	public readonly createdAt!: Date;
@@ -49,7 +49,7 @@ export class SelfPlaylistsResult {
 	public readonly userId!: string;
 	public readonly tracks!: null;
 
-	private constructor(data: ISelfPlaylistsResult) {
+	protected constructor(data: ISelfPlaylistsResult) {
 		this.data = data;
 
 		this.deleted = Boolean(this.data.deleted);
@@ -70,10 +70,10 @@ export class SelfPlaylistsResult {
 
 }
 
-export class SelfPlaylists {
+export class SelfPlaylists implements ISelfPlaylists {
 
 	@enumerable(false)
-	private readonly data: ISelfPlaylists;
+	protected readonly data: ISelfPlaylists;
 
 	public readonly results!: SelfPlaylistsResult[];
 	public readonly archived!: number;
@@ -89,7 +89,7 @@ export class SelfPlaylists {
 	public readonly visibility!: number;
 	public readonly fields!: ISelfPlaylistsFields;
 
-	private constructor(data: ISelfPlaylists) {
+	protected constructor(data: ISelfPlaylists) {
 		this.data = data;
 
 		this.results = this.data.results.map(result => SelfPlaylistsResult.create(result));

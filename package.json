@@ -1,8 +1,9 @@
 {
   "name": "monstercat.ts",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc -b src"
   },
@@ -20,5 +21,13 @@
     "eslint": "^7.4.0",
     "eslint-config-bamboo": "^5.1.0",
     "typescript": "^3.9.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuantumlyTangled/Monstercat.ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/QuantumlyTangled/Monstercat.ts/issues"
+  },
+  "homepage": "https://github.com/QuantumlyTangled/Monstercat.ts#readme"
 }

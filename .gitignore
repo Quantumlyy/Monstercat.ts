@@ -143,3 +143,9 @@ dist
 # Typescript
 dist/
 # End of Typescript
+
+# Testing
+
+src/test.ts
+
+# End of Testing

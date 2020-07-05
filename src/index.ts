@@ -3,3 +3,4 @@ export * from './lib/structures/ApiHandler';
 export { CookieJar } from './lib/util/CookieJar';
 
 export * from './lib/structures/data/SelfPlaylists';
+export * from './lib/structures/data/PlaylistPid';
