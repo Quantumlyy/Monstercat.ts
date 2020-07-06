@@ -1,6 +1,7 @@
 import { CookieJar } from '../util/CookieJar';
 import { enumerable, noop } from '../util/util';
 import Chainfetch from 'chainfetch';
+import { stringify } from '@favware/querystring';
 
 export interface AuthenticationInformation {
 	email: string;
@@ -45,9 +46,9 @@ export class ApiHandler {
 		return (await this.fetchAuth()).stringify();
 	}
 
-	public async request(path: string): Promise<Chainfetch> {
+	public async request<T>(path: string, pqso?: T): Promise<Chainfetch> {
 		return Chainfetch
-			.get(`${ApiHandler.BASE_URL}${path}`)
+			.get(`${ApiHandler.BASE_URL}${path}${pqso ? stringify<T>(pqso) : ''}`)
 			.set('cookie', decodeURIComponent(await this.fetchAuthCookies()))
 			.toJSON();
 	}

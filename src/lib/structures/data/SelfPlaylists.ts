@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/member-ordering */
 import { enumerable } from '../../util/util';
+import { MonstercatPaginationOptions } from './Common';
 
 export interface ISelfPlaylists {
 	results: ISelfPlaylistsResult[];
@@ -69,6 +70,8 @@ export class SelfPlaylistsResult implements ISelfPlaylistsResult {
 	}
 
 }
+
+export interface SelfPlaylistsOptions extends MonstercatPaginationOptions { }
 
 export class SelfPlaylists implements ISelfPlaylists {
 
