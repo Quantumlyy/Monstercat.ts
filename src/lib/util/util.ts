@@ -1,6 +1,7 @@
 /**
  * @enumerable decorator that sets the enumerable property of a class field to false.
- * @param value
+ * @param value true if and only if this property shows up during enumeration of the properties on the corresponding object.
+ * @private
  */
 export function enumerable(value: boolean) {
 	return (target: unknown, key: string) => {
@@ -18,5 +19,9 @@ export function enumerable(value: boolean) {
 	};
 }
 
+/**
+ * An empty function used for when we dont need returned/calledback values
+ * @private
+ */
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 export function noop() { }

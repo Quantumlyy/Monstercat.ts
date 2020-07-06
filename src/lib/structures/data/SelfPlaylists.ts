@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/member-ordering */
-import { enumerable } from '../../util/util';
-import { MonstercatPaginationOptions } from './Common';
+import { MonstercatPaginationOptions, DataRawBase } from './Common';
 
 export interface ISelfPlaylists {
 	results: ISelfPlaylistsResult[];
@@ -34,10 +33,7 @@ export interface ISelfPlaylistsResult {
 	tracks: null;
 }
 
-export class SelfPlaylistsResult implements ISelfPlaylistsResult {
-
-	@enumerable(false)
-	protected readonly data: ISelfPlaylistsResult;
+export class SelfPlaylistsResult extends DataRawBase<ISelfPlaylistsResult> implements ISelfPlaylistsResult {
 
 	public readonly deleted!: boolean;
 	public readonly createdAt!: Date;
@@ -51,7 +47,7 @@ export class SelfPlaylistsResult implements ISelfPlaylistsResult {
 	public readonly tracks!: null;
 
 	protected constructor(data: ISelfPlaylistsResult) {
-		this.data = data;
+		super(data);
 
 		this.deleted = Boolean(this.data.deleted);
 		this.createdAt = new Date(this.data.createdAt);
@@ -73,10 +69,7 @@ export class SelfPlaylistsResult implements ISelfPlaylistsResult {
 
 export interface SelfPlaylistsOptions extends MonstercatPaginationOptions { }
 
-export class SelfPlaylists implements ISelfPlaylists {
-
-	@enumerable(false)
-	protected readonly data: ISelfPlaylists;
+export class SelfPlaylists extends DataRawBase<ISelfPlaylists> implements ISelfPlaylists {
 
 	public readonly results!: SelfPlaylistsResult[];
 	public readonly archived!: number;
@@ -93,7 +86,7 @@ export class SelfPlaylists implements ISelfPlaylists {
 	public readonly fields!: ISelfPlaylistsFields;
 
 	protected constructor(data: ISelfPlaylists) {
-		this.data = data;
+		super(data);
 
 		this.results = this.data.results.map(result => SelfPlaylistsResult.create(result));
 		this.archived = Number(this.data.archived);

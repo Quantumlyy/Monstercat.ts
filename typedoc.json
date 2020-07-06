@@ -1,0 +1,7 @@
+{
+    "inputFiles": ["./src"],
+    "tsconfig": "./src/tsconfig.json",
+    "name": "Monstercat.ts",
+    "mode": "file",
+    "out": "docs"
+}

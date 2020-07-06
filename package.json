@@ -6,7 +6,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc -b src",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build",
+    "documentation:build": "typedoc --exclude \"src/test.ts\""
   },
   "author": "QuantumlyTangled",
   "license": "MIT",
@@ -22,6 +23,7 @@
     "@typescript-eslint/parser": "^3.5.0",
     "eslint": "^7.4.0",
     "eslint-config-bamboo": "^5.1.0",
+    "typedoc": "^0.17.8",
     "typescript": "^3.9.6"
   },
   "repository": {
