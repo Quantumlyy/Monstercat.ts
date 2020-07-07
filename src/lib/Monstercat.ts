@@ -3,13 +3,18 @@ import { ApiHandler } from './structures/ApiHandler';
 
 import { SelfPlaylists, SelfPlaylistsOptions } from './structures/data/SelfPlaylists';
 import { PlaylistPid } from './structures/data/PlaylistPid';
-import { PlaylistPidCatalogOptions } from './structures/data/PlaylistPidCatalog';
+import { PlaylistPidCatalogOptions, PlaylistPidCatalog } from './structures/data/PlaylistPidCatalog';
 
 export class Monstercat {
 
 	@enumerable(false)
 	public readonly api!: ApiHandler;
 
+	/**
+	 * @param email The Email of the authenticating user
+	 * @param password The Password of the authenticating user
+	 * @constructor
+	 */
 	public constructor(email: string, password: string) {
 		this.api = new ApiHandler({ email, password });
 	}
@@ -23,7 +28,7 @@ export class Monstercat {
 	}
 
 	public async getPlaylistPidCatalog(pid: string, options?: PlaylistPidCatalogOptions): Promise<unknown> {
-		return (await this.api.request(`/playlist/${pid}/catalog`, options)).body;
+		return PlaylistPidCatalog.create((await this.api.request(`/playlist/${pid}/catalog`, options)).body);
 	}
 
 }

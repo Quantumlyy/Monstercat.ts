@@ -53,6 +53,10 @@ export interface IPlaylistPidCatalogRelease {
 
 export interface PlaylistPidCatalogOptions extends MonstercatPaginationOptions { }
 
+/**
+ * @class
+ * @hideconstructor
+ */
 export class PlaylistPidCatalogArtist extends DataRawBase<IPlaylistPidCatalogArtist> implements IPlaylistPidCatalogArtist {
 
 	public readonly id: string;
@@ -77,6 +81,10 @@ export class PlaylistPidCatalogArtist extends DataRawBase<IPlaylistPidCatalogArt
 
 }
 
+/**
+ * @class
+ * @hideconstructor
+ */
 export class PlaylistPidCatalogRelease extends DataRawBase<IPlaylistPidCatalogRelease> implements IPlaylistPidCatalogRelease {
 
 	public readonly artistsTitle: string;
@@ -107,6 +115,10 @@ export class PlaylistPidCatalogRelease extends DataRawBase<IPlaylistPidCatalogRe
 
 }
 
+/**
+ * @class
+ * @hideconstructor
+ */
 export class PlaylistPidCatalogResult extends DataRawBase<IPlaylistPidCatalogResult> implements IPlaylistPidCatalogResult {
 
 	public readonly artistsTitle: string;
@@ -157,6 +169,34 @@ export class PlaylistPidCatalogResult extends DataRawBase<IPlaylistPidCatalogRes
 
 	public static create(data: IPlaylistPidCatalogResult): PlaylistPidCatalogResult {
 		return new PlaylistPidCatalogResult(data);
+	}
+
+}
+
+/**
+ * @class
+ * @hideconstructor
+ */
+export class PlaylistPidCatalog extends DataRawBase<IPlaylistPidCatalog> implements IPlaylistPidCatalog {
+
+	public readonly results: IPlaylistPidCatalogResult[];
+	public readonly notFound: any[];
+	public readonly total: number;
+	public readonly limit: number;
+	public readonly skip: number;
+
+	protected constructor(data: IPlaylistPidCatalog) {
+		super(data);
+
+		this.results = this.data.results.map(result => PlaylistPidCatalogResult.create(result));
+		this.notFound = this.data.notFound;
+		this.total = Number(this.data.total);
+		this.limit = Number(this.data.limit);
+		this.skip = Number(this.data.skip);
+	}
+
+	public static create(data: IPlaylistPidCatalog): PlaylistPidCatalog {
+		return new PlaylistPidCatalog(data);
 	}
 
 }

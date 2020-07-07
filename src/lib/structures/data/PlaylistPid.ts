@@ -2,6 +2,10 @@ import { SelfPlaylistsResult, ISelfPlaylistsResult } from './SelfPlaylists';
 
 export interface IPlaylistPid extends ISelfPlaylistsResult { }
 
+/**
+ * @class
+ * @hideconstructor
+ */
 export class PlaylistPid extends SelfPlaylistsResult implements IPlaylistPid {
 
 	protected constructor(data: IPlaylistPid) {

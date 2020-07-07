@@ -6,6 +6,10 @@ export interface MonstercatPaginationOptions {
 	skip: number;
 }
 
+/**
+ * @class
+ * @hideconstructor
+ */
 export class DataRawBase<T> {
 
 	@enumerable(false)

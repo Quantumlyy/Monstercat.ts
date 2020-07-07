@@ -33,6 +33,10 @@ export interface ISelfPlaylistsResult {
 	tracks: null;
 }
 
+/**
+ * @class
+ * @hideconstructor
+ */
 export class SelfPlaylistsResult extends DataRawBase<ISelfPlaylistsResult> implements ISelfPlaylistsResult {
 
 	public readonly deleted!: boolean;
@@ -69,6 +73,10 @@ export class SelfPlaylistsResult extends DataRawBase<ISelfPlaylistsResult> imple
 
 export interface SelfPlaylistsOptions extends MonstercatPaginationOptions { }
 
+/**
+ * @class
+ * @hideconstructor
+ */
 export class SelfPlaylists extends DataRawBase<ISelfPlaylists> implements ISelfPlaylists {
 
 	public readonly results!: SelfPlaylistsResult[];
