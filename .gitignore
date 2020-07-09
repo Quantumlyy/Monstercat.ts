@@ -149,5 +149,7 @@ dist/
 # Testing
 
 src/test.ts
+.github/workflows/temp.favware.deployments.yaml
+.github/workflows/publish.yaml
 
 # End of Testing
