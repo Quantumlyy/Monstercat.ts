@@ -12,3 +12,8 @@ trim_trailing_whitespace = true
 charset = utf-8
 indent_style = tab
 indent_size = 4
+
+[*.{yml,yaml}]
+charset = utf-8
+indent_style = tab
+indent_size = 2

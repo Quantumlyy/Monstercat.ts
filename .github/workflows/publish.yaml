@@ -4,50 +4,61 @@ on:
   push:
     branches:
       - master
+    paths:
+      - 'src/**'
+      - '.github/**'
 
 jobs:
-  DocumentationInternal:
-    name: Documentation - General
-    runs-on: ubuntu-latest
+  Publish-NPM:
+    name: "Publish to NPM"
+		runs-on: ubuntu-latest
+		if: "!(contains(github.event.head_commit.message, '[skip ci]') || contains(github.event.head_commit.message, '[skip publish]') || contains(github.event.head_commit.message, '[skip publish-npm]'))"
     steps:
-    - name: Checkout Project
-      uses: actions/checkout@v1
-    - name: Use Node.js 12
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12
-    - name: Restore CI Cache
-      uses: actions/cache@v1
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-12-${{ hashFiles('**/yarn.lock') }}
-    - name: Install Dependencies
-      run: yarn --ignore-scripts --frozen-lockfile
-    - name: Publish Docs
-      run: |
-        #!/bin/bash
-        set -euxo pipefail
-        echo -e "\n# Initialise some useful variables"
-        REPO="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-        BRANCH_OR_TAG=`awk -F/ '{print $2}' <<< $GITHUB_REF`
-        CURRENT_BRANCH=`awk -F/ '{print $NF}' <<< $GITHUB_REF`
-        if [ "$BRANCH_OR_TAG" == "heads" ]; then
-          SOURCE_TYPE="branch"
-        else
-          SOURCE_TYPE="tag"
-        fi
-        echo -e "\n# Checkout the repo in the target branch"
-        TARGET_BRANCH="gh-pages"
-        git clone $REPO out -b $TARGET_BRANCH
-        yarn documentation:workflow:generate
-        echo -e "\n# Move the generated docs to the newly-checked-out repo, to be committed and pushed"
-        rsync -vau docs/ out/
-        echo -e "\n# Commit and push"
-        cd out
-        git add --all .
-        git config user.name "${GITHUB_ACTOR}"
-        git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-        git commit -m "Docs build: ${GITHUB_SHA}" || true
-        git push origin $TARGET_BRANCH
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_COMMIT_TOKEN }}
+      - name: Checkout Project
+        uses: actions/checkout@v2
+      - name: Install NodeJS v12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: 'https://registry.npmjs.org'
+      - name: Restore CI Cache
+        uses: actions/cache@1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-12-${{ hashFiles('**/yarn.lock') }}
+      - name: Install Dependencies
+				run: yarn --ignore-scripts --frozen-lockfile
+			- name: Bump Semver
+        if: "!contains(github.event.head_commit.message, '[skip bump]')"
+        run: yarn sversion
+      - name: Publish
+        run: npm publish
+				env:
+					NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+
+  Publish-Github:
+    name: "Publish to Github"
+		runs-on: ubuntu-latest
+		if: "!(contains(github.event.head_commit.message, '[skip ci]') || contains(github.event.head_commit.message, '[skip publish]') || contains(github.event.head_commit.message, '[skip publish-github]'))"
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v2
+      - name: Install NodeJS v12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: 'https://npm.pkg.github.com'
+      - name: Restore CI Cache
+        uses: actions/cache@1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-12-${{ hashFiles('**/yarn.lock') }}
+      - name: Install Dependencies
+				run: yarn --ignore-scripts --frozen-lockfile
+			- name: Bump Semver
+        if: "!contains(github.event.head_commit.message, '[skip bump]')"
+        run: yarn sversion
+      - name: Publish
+        run: npm publish
+				env:
+					NODE_AUTH_TOKEN: ${{ secrets.GH_PUBLISH_TOKEN }}
