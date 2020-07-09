@@ -1,19 +1,22 @@
 {
   "name": "monstercat.ts",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "keywords": [
     "api",
     "wrapper",
     "typescript",
     "documented",
-    "monstercat"
+    "monstercat",
+    "quantumlyy",
+    "quantumlytangled"
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc -b src",
     "prepublishOnly": "yarn build",
+    "sversion": "standard-version",
     "documentation:generate": "typedoc --exclude \"src/test.ts\"",
     "documentation:workflow:generate": "yarn run documentation:generate",
     "documentation:workflow:clean:linux": "rm -rf src .eslintrc.json .eslintignore .editorconfig .npmignore yarn.lock .github.npmrc .gitignore node_modules"
@@ -32,8 +35,13 @@
     "@typescript-eslint/parser": "^3.5.0",
     "eslint": "^7.4.0",
     "eslint-config-bamboo": "^5.1.0",
+    "standard-version": "^8.0.0",
     "typedoc": "^0.17.8",
     "typescript": "^3.9.6"
+  },
+  "engines": {
+    "node": ">=12",
+    "npm": ">=6"
   },
   "repository": {
     "type": "git",
