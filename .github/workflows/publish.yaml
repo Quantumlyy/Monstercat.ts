@@ -22,7 +22,7 @@ jobs:
           node-version: 12
           registry-url: 'https://registry.npmjs.org'
       - name: Restore CI Cache
-        uses: actions/cache@1
+        uses: actions/cache@v1
         with:
           path: node_modules
           key: ${{ runner.os }}-12-${{ hashFiles('**/yarn.lock') }}
@@ -49,7 +49,7 @@ jobs:
           node-version: 12
           registry-url: 'https://npm.pkg.github.com'
       - name: Restore CI Cache
-        uses: actions/cache@1
+        uses: actions/cache@v1
         with:
           path: node_modules
           key: ${{ runner.os }}-12-${{ hashFiles('**/yarn.lock') }}
