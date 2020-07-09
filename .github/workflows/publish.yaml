@@ -69,6 +69,8 @@ jobs:
         if: "!contains(github.event.head_commit.message, '[skip bump]')"
         run: yarn sversion
       - name: Publish
-        run: npm publish
+        run: |
+          echo @quantumlytangled:registry=https://npm.pkg.github.com/ >> .npmrc
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GH_PUBLISH_TOKEN }}
