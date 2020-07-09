@@ -106,7 +106,7 @@ jobs:
         run: yarn sversion
       - name: Publish
         run: |
-          yarn run workflow:publish:github:replacename:linux
+        sed -i '2s/.*/"name": "@quantumlytangled\/monstercat.ts",/' package.json
           yarn run workflow:publish:github:pipenpmrc:linux
           npm publish
         env:
