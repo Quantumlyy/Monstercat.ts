@@ -56,6 +56,11 @@ jobs:
           node-version: 12
           registry-url: 'https://npm.pkg.github.com'
           scope: "@quantumlytangled"
+      - name: Restore CI Cache
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-12-${{ hashFiles('**/yarn.lock') }}
       - name: Install Dependencies
         run: yarn --ignore-scripts --frozen-lockfile
       - name: Configure Git
@@ -70,8 +75,8 @@ jobs:
         run: yarn sversion
       - name: Publish
         run: |
-          sed -i '2s/.*/"name": "@quantumlytangled\/monstercat.ts",/' package.json
-          echo @quantumlytangled:registry=https://npm.pkg.github.com/ >> .npmrc
+          yarn run workflow:publish:github:replacename:linux
+          yarn run workflow:publish:github:pipenpmrc:linux
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GH_PUBLISH_TOKEN }}

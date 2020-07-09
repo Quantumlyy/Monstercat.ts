@@ -149,5 +149,6 @@ dist/
 # Testing
 
 src/test.ts
+docs/
 
 # End of Testing

@@ -4,3 +4,7 @@ dist/test.js
 dist/test.d.ts
 dist/test.js.map
 docs/
+.github/workflows/
+.editorconfig
+.eslintignore
+.eslintrc.json
