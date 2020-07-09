@@ -35,18 +35,10 @@ jobs:
           git config --local user.name "${GITHUB_ACTOR}";
         env:
           GITHUB_TOKEN: ${{ secrets.GH_COMMIT_TOKEN }}
-      - name: Bump Semver
-        run: yarn sversion
-      - name: Commit changelog
+      - name: Generate and Commit changelog
         run: |
-          git add .;
-          if git diff-index --quiet HEAD --; then
-            exit 0;
-          else
-            git checkout -b master;
-            git commit -sam "automated changelog";
-            git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
-          fi
+          yarn sversion
+          git push --follow-tags origin master
 
   Publish-NPM:
     name: "Publish to NPM"
