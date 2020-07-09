@@ -9,10 +9,10 @@ on:
       - '.github/**'
 
 jobs:
-  Publish-NPM:
-    name: "Publish to NPM"
+  UpdateVersion:
+    name: "Update Version"
     runs-on: ubuntu-latest
-    if: "!(contains(github.event.head_commit.message, '[skip ci]') || contains(github.event.head_commit.message, '[skip publish]') || contains(github.event.head_commit.message, '[skip publish-npm]'))"
+    if: "!(contains(github.event.head_commit.message, '[skip ci]') || contains(github.event.head_commit.message, '[skip bump]') || contains(github.event.head_commit.message, '[skip publish]'))"
     steps:
       - name: Checkout Project
         uses: actions/checkout@v2
@@ -28,6 +28,17 @@ jobs:
           key: ${{ runner.os }}-12-${{ hashFiles('**/yarn.lock') }}
       - name: Install Dependencies
         run: yarn --ignore-scripts --frozen-lockfile
+      - name: Install GitHub CLI
+        env:
+          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+        run: |
+          curl -sL \
+              $(curl -sL \
+                  -H "Authorization: bearer ${GITHUB_TOKEN}" \
+                  -X POST \
+                  --data '{"query":"query { repository(owner: \"cli\", name: \"cli\") { releases(last: 1) { nodes { releaseAssets(first: 20) { nodes { downloadUrl name }}}}}}"}' "https://api.github.com/graphql" |
+                  jq -cr '.data.repository.releases.nodes[0].releaseAssets.nodes[]? | select(.name | contains("linux_amd64.tar.gz")).downloadUrl') |
+              tar -xz --wildcards "*gh" && mv gh*linux_amd64/bin/gh . && rm -r gh_*linux_amd64
       - name: Configure Git
         run: |
           git remote set-url origin "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git";
@@ -36,8 +47,38 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_COMMIT_TOKEN }}
       - name: Bump Semver
-        if: "!contains(github.event.head_commit.message, '[skip bump]')"
         run: yarn sversion
+      - name: Commit changelog
+        run: |
+          git add .;
+          if git diff-index --quiet HEAD --; then
+            exit 0;
+          else
+            git checkout -b master;
+            git commit -sam "automated changelog";
+            git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+          fi
+
+  Publish-NPM:
+    name: "Publish to NPM"
+    needs: UpdateVersion
+    runs-on: ubuntu-latest
+    if: "!(contains(github.event.head_commit.message, '[skip ci]') || contains(github.event.head_commit.message, '[skip bump]') || contains(github.event.head_commit.message, '[skip publish]') || contains(github.event.head_commit.message, '[skip publish-npm]'))"
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v2
+      - name: Install NodeJS v12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: 'https://registry.npmjs.org'
+      - name: Restore CI Cache
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-12-${{ hashFiles('**/yarn.lock') }}
+      - name: Install Dependencies
+        run: yarn --ignore-scripts --frozen-lockfile
       - name: Publish
         run: npm publish --access public
         env:
@@ -45,8 +86,9 @@ jobs:
 
   Publish-Github:
     name: "Publish to Github"
+    needs: UpdateVersion
     runs-on: ubuntu-latest
-    if: "!(contains(github.event.head_commit.message, '[skip ci]') || contains(github.event.head_commit.message, '[skip publish]') || contains(github.event.head_commit.message, '[skip publish-github]'))"
+    if: "!(contains(github.event.head_commit.message, '[skip ci]') || contains(github.event.head_commit.message, '[skip bump]') || contains(github.event.head_commit.message, '[skip publish]') || contains(github.event.head_commit.message, '[skip publish-github]'))"
     steps:
       - name: Checkout Project
         uses: actions/checkout@v2
@@ -70,9 +112,6 @@ jobs:
           git config --local user.name "${GITHUB_ACTOR}";
         env:
           GITHUB_TOKEN: ${{ secrets.GH_COMMIT_TOKEN }}
-      - name: Bump Semver
-        if: "!contains(github.event.head_commit.message, '[skip bump]')"
-        run: yarn sversion
       - name: Publish
         run: |
           yarn run workflow:publish:github:replacename:linux
