@@ -27,7 +27,7 @@ export class Monstercat {
 		return PlaylistPid.create((await this.api.request(`/playlist/${pid}`)).body);
 	}
 
-	public async getPlaylistPidCatalog(pid: string, options?: PlaylistPidCatalogOptions): Promise<unknown> {
+	public async getPlaylistPidCatalog(pid: string, options?: PlaylistPidCatalogOptions): Promise<PlaylistPidCatalog> {
 		return PlaylistPidCatalog.create((await this.api.request(`/playlist/${pid}/catalog`, options)).body);
 	}
 

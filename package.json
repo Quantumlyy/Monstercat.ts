@@ -7,9 +7,11 @@
   "scripts": {
     "build": "tsc -b src",
     "prepublishOnly": "yarn build",
-    "documentation:build": "typedoc --exclude \"src/test.ts\""
+    "documentation:generate": "typedoc --exclude \"src/test.ts\"",
+    "documentation:workflow:generate": "yarn run documentation:generate",
+    "documentation:workflow:clean:linux": "rm -rf src .eslintrc.json .eslintignore .editorconfig .npmignore yarn.lock .github.npmrc .gitignore node_modules"
   },
-  "author": "QuantumlyTangled",
+  "author": "QuantumlyTangled (https://quantumlytangled.com)",
   "license": "MIT",
   "dependencies": {
     "@favware/querystring": "^6.0.4",

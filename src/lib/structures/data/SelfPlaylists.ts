@@ -39,16 +39,16 @@ export interface ISelfPlaylistsResult {
  */
 export class SelfPlaylistsResult extends DataRawBase<ISelfPlaylistsResult> implements ISelfPlaylistsResult {
 
-	public readonly deleted!: boolean;
-	public readonly createdAt!: Date;
-	public readonly updatedAt!: Date;
-	public readonly id!: string;
-	public readonly public!: boolean;
-	public readonly myLibrary!: boolean;
-	public readonly numRecords!: number;
-	public readonly name!: string;
-	public readonly userId!: string;
-	public readonly tracks!: null;
+	public readonly deleted: boolean;
+	public readonly createdAt: Date;
+	public readonly updatedAt: Date;
+	public readonly id: string;
+	public readonly public: boolean;
+	public readonly myLibrary: boolean;
+	public readonly numRecords: number;
+	public readonly name: string;
+	public readonly userId: string;
+	public readonly tracks: null;
 
 	protected constructor(data: ISelfPlaylistsResult) {
 		super(data);
@@ -79,19 +79,19 @@ export interface SelfPlaylistsOptions extends MonstercatPaginationOptions { }
  */
 export class SelfPlaylists extends DataRawBase<ISelfPlaylists> implements ISelfPlaylists {
 
-	public readonly results!: SelfPlaylistsResult[];
-	public readonly archived!: number;
-	public readonly count!: number;
-	public readonly labelId!: string;
-	public readonly limit!: number;
-	public readonly offset!: number;
-	public readonly search!: string;
-	public readonly total!: number;
-	public readonly sort!: ISelfPlaylistsFields;
-	public readonly beginDate!: Date;
-	public readonly endDate!: Date;
-	public readonly visibility!: number;
-	public readonly fields!: ISelfPlaylistsFields;
+	public readonly results: SelfPlaylistsResult[];
+	public readonly archived: number;
+	public readonly count: number;
+	public readonly labelId: string;
+	public readonly limit: number;
+	public readonly offset: number;
+	public readonly search: string;
+	public readonly total: number;
+	public readonly sort: ISelfPlaylistsFields;
+	public readonly beginDate: Date;
+	public readonly endDate: Date;
+	public readonly visibility: number;
+	public readonly fields: ISelfPlaylistsFields;
 
 	protected constructor(data: ISelfPlaylists) {
 		super(data);
