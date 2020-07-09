@@ -60,6 +60,15 @@ jobs:
           key: ${{ runner.os }}-12-${{ hashFiles('**/yarn.lock') }}
       - name: Install Dependencies
         run: yarn --ignore-scripts --frozen-lockfile
+      - name: Configure Git
+        run: |
+          git remote set-url origin "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git";
+          git config --local user.email "${GITHUB_ACTOR}@users.noreply.github.com";
+          git config --local user.name "${GITHUB_ACTOR}";
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_COMMIT_TOKEN }}
+      - name: Bump Version - Extra
+        run: yarn sversion
       - name: Publish
         run: npm publish --access public
         env:
@@ -93,6 +102,8 @@ jobs:
           git config --local user.name "${GITHUB_ACTOR}";
         env:
           GITHUB_TOKEN: ${{ secrets.GH_COMMIT_TOKEN }}
+      - name: Bump Version - Extra
+        run: yarn sversion
       - name: Publish
         run: |
           yarn run workflow:publish:github:replacename:linux
