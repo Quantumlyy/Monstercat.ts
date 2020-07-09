@@ -1,3 +1,5 @@
+import { parse as parseUrl } from 'url';
+
 /**
  * @enumerable decorator that sets the enumerable property of a class field to false.
  * @param value true if and only if this property shows up during enumeration of the properties on the corresponding object.
@@ -25,3 +27,8 @@ export function enumerable(value: boolean) {
  */
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 export function noop() { }
+
+export function parsePlaylistUrl(url: string): string {
+	const parsedUrl = parseUrl(url, false);
+	return parsedUrl.path!.split('/')[1];
+}
