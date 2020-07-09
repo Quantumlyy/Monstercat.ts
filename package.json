@@ -1,7 +1,14 @@
 {
   "name": "monstercat.ts",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
+  "keywords": [
+    "api",
+    "wrapper",
+    "typescript",
+    "documented",
+    "monstercat"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
