@@ -1,6 +1,6 @@
 {
   "name": "monstercat.ts",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "",
   "keywords": [
     "api",
@@ -21,7 +21,7 @@
     "documentation:generate": "typedoc --exclude \"src/test.ts\"",
     "workflow:documentation:generate": "yarn run documentation:generate",
     "workflow:documentation:clean:linux": "rm -rf src .eslintrc.json .eslintignore .editorconfig .npmignore yarn.lock .github.npmrc .gitignore node_modules",
-    "workflow:publish:github:replacename:linux": "sed -i '2s/.*/\"name\": \"@quantumlytangled\/monstercat.ts\",/' package.json",
+    "workflow:publish:github:replacename:linux": "sed -i '2s/.*/\"name\": \"@quantumlytangled/monstercat.ts\",/' package.json",
     "workflow:publish:github:pipenpmrc:linux": "echo @quantumlytangled:registry=https://npm.pkg.github.com/ >> .npmrc"
   },
   "author": "QuantumlyTangled (https://quantumlytangled.com)",
