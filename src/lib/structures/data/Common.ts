@@ -1,6 +1,6 @@
 import { enumerable } from '../../util/util';
 
-export interface MonstercatPaginationOptions {
+export interface MonstercatPaginationBase {
 	page: number;
 	limit: number;
 	skip: number;

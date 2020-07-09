@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/member-ordering */
-import { MonstercatPaginationOptions, DataRawBase } from './Common';
+import { MonstercatPaginationBase, DataRawBase } from './Common';
 
 export interface IPlaylistPidCatalog {
 	results: IPlaylistPidCatalogResult[];
@@ -51,7 +51,7 @@ export interface IPlaylistPidCatalogRelease {
 	upc: string;
 }
 
-export interface PlaylistPidCatalogOptions extends MonstercatPaginationOptions { }
+export interface PlaylistPidCatalogOptions extends MonstercatPaginationBase { }
 
 /**
  * @class

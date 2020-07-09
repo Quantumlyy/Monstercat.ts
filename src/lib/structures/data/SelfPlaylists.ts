@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/member-ordering */
-import { MonstercatPaginationOptions, DataRawBase } from './Common';
+import { MonstercatPaginationBase, DataRawBase } from './Common';
 
 export interface ISelfPlaylists {
 	results: ISelfPlaylistsResult[];
@@ -71,7 +71,7 @@ export class SelfPlaylistsResult extends DataRawBase<ISelfPlaylistsResult> imple
 
 }
 
-export interface SelfPlaylistsOptions extends MonstercatPaginationOptions { }
+export interface SelfPlaylistsOptions extends MonstercatPaginationBase { }
 
 /**
  * @class
