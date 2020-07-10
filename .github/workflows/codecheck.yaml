@@ -49,3 +49,4 @@ jobs:
         uses: icrawl/action-tsc@v1
         with:
           project: src/tsconfig.json
+          build: true
