@@ -48,5 +48,4 @@ jobs:
       - name: Run ESLint
         uses: icrawl/action-tsc@v1
         with:
-          project: src/tsconfig.json
-          build: true
+          build: src
