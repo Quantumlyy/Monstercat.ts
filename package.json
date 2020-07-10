@@ -1,6 +1,6 @@
 {
   "name": "monstercat.ts",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "The best-in-class Monstercat Connect API Wrapper",
   "keywords": [
     "api",
