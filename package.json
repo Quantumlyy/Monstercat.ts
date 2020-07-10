@@ -19,6 +19,8 @@
     "build:preparePackage": "npx cpx package.json src",
     "prepublishOnly": "yarn build",
     "sversion": "standard-version",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
     "documentation:generate": "typedoc --options ./typedoc.json --exclude \"src/test.ts\"",
     "workflow:documentation:generate": "yarn run documentation:generate",
     "workflow:documentation:clean:linux": "rm -rf src .eslintrc.json .eslintignore .editorconfig .npmignore yarn.lock .github.npmrc .gitignore node_modules",
@@ -33,13 +35,18 @@
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.4",
     "@types/node": "^14.0.14",
     "@types/node-fetch": "^2.5.7",
     "@typescript-eslint/eslint-plugin": "^3.5.0",
     "@typescript-eslint/parser": "^3.5.0",
     "eslint": "^7.4.0",
     "eslint-config-bamboo": "^5.1.0",
+    "jest": "^26.1.0",
+    "jest-circus": "^26.1.0",
     "standard-version": "^8.0.0",
+    "ts-jest": "^26.1.1",
+    "ts-node": "^8.10.2",
     "typedoc": "next",
     "typescript": "^3.9.6"
   },

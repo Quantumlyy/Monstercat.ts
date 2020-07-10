@@ -30,5 +30,5 @@ export function noop() { }
 
 export function parsePlaylistUrl(url: string): string {
 	const parsedUrl = parseUrl(url, false);
-	return parsedUrl.path!.split('/')[1];
+	return parsedUrl.path!.split('/')[2];
 }
