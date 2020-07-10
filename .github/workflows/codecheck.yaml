@@ -1,4 +1,4 @@
-name: "Code Checking"
+name: "Code Check"
 
 on:
   push:
@@ -45,7 +45,7 @@ jobs:
           key: ${{ runner.os }}-12-${{ hashFiles('**/yarn.lock') }}
       - name: Install Dependencies
         run: yarn --ignore-scripts --frozen-lockfile
-      - name: Run ESLint
+      - name: Run TSC
         uses: icrawl/action-tsc@v1
         with:
           build: src
