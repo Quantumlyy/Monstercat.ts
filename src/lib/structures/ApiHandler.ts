@@ -14,46 +14,42 @@ export const enum ApiBases {
 
 export class ApiHandler {
 
-	@enumerable(false)
-	private authInfo?: AuthenticationInformation;
+	protected authenticated = false;
 
 	@enumerable(false)
 	private AuthenticationCookies!: CookieJar<string>;
 
-	public constructor(authInfo: AuthenticationInformation) {
-		this.authInfo = authInfo;
-
-		this.fetchAuth()
-			.then(noop)
-			.catch(console.error.bind(this));
+	public constructor(authInfo?: AuthenticationInformation) {
+		if (authInfo) {
+			this.fetchAuth(authInfo)
+				.then(noop)
+				.catch(console.error.bind(this));
+		}
 	}
 
-	public async fetchAuth(): Promise<CookieJar<string>> {
-		if (this.AuthenticationCookies) return this.AuthenticationCookies;
+	public async fetchAuth(authInfo?: AuthenticationInformation): Promise<CookieJar<string>> {
+		if (!this.authenticated && !authInfo) throw new Error('In order to authenticate please pass the appropriate info');
+		if (this.authenticated) return this.AuthenticationCookies;
 
 		const request = await Chainfetch
 			.post(`${ApiHandler.BASE_URL}/signin`)
 			.set('User-Agent', ApiHandler.UserAgent)
-			.send({ email: this.authInfo!.email, password: this.authInfo!.password });
-
-		delete this.authInfo;
+			.send({ email: authInfo!.email, password: authInfo!.password });
 
 		this.AuthenticationCookies = CookieJar.create(request.headers);
+		this.authenticated = true;
 
 		return this.AuthenticationCookies;
 	}
 
-	public async fetchAuthCookies(): Promise<string> {
-		return (await this.fetchAuth()).stringify();
-	}
+	public async request<T>(path: string, pqso?: T, authed = true): Promise<Chainfetch> {
+		const headers: string[][] = [['User-Agent', ApiHandler.UserAgent]];
+		if (!this.authenticated && authed) throw new Error('In order to authenticate please call the fetchAuth method first');
+		if (this.authenticated && authed) headers.push(['cookie', decodeURIComponent((await this.fetchAuth()).stringify())]);
 
-	public async request<T>(path: string, pqso?: T): Promise<Chainfetch> {
 		return Chainfetch
 			.get(`${ApiHandler.BASE_URL}${path}${pqso ? stringify<T>(pqso) : ''}`)
-			.set([
-				['cookie', decodeURIComponent(await this.fetchAuthCookies())],
-				['User-Agent', ApiHandler.UserAgent]
-			])
+			.set(headers)
 			.toJSON();
 	}
 
