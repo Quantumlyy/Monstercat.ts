@@ -143,6 +143,7 @@ dist
 # Typescript
 
 dist/
+src/package.json
 
 # End of Typescript
 

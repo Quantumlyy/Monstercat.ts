@@ -16,9 +16,10 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc -b src",
+    "build:preparePackage": "npx cpx package.json src",
     "prepublishOnly": "yarn build",
     "sversion": "standard-version",
-    "documentation:generate": "typedoc --exclude \"src/test.ts\"",
+    "documentation:generate": "typedoc --options ./typedoc.json --exclude \"src/test.ts\"",
     "workflow:documentation:generate": "yarn run documentation:generate",
     "workflow:documentation:clean:linux": "rm -rf src .eslintrc.json .eslintignore .editorconfig .npmignore yarn.lock .github.npmrc .gitignore node_modules",
     "workflow:publish:github:replacename:linux": "sed -i '2s/.*/\"name\": \"@quantumlytangled/monstercat.ts\",/' package.json",
@@ -39,7 +40,7 @@
     "eslint": "^7.4.0",
     "eslint-config-bamboo": "^5.1.0",
     "standard-version": "^8.0.0",
-    "typedoc": "^0.17.8",
+    "typedoc": "next",
     "typescript": "^3.9.6"
   },
   "engines": {

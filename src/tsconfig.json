@@ -5,8 +5,9 @@
 		"rootDir": ".",
 		"baseUrl": ".",
 		"composite": true,
-		"declaration": true,
-		"moduleResolution": "Node"
+		"declaration": true
 	},
-	"include": ["."]
+	"include": [
+		"."
+	]
 }

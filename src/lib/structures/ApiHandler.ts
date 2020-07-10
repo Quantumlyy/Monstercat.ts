@@ -33,6 +33,7 @@ export class ApiHandler {
 
 		const request = await Chainfetch
 			.post(`${ApiHandler.BASE_URL}/signin`)
+			.set('User-Agent', ApiHandler.UserAgent)
 			.send({ email: this.authInfo!.email, password: this.authInfo!.password });
 
 		delete this.authInfo;
@@ -49,10 +50,15 @@ export class ApiHandler {
 	public async request<T>(path: string, pqso?: T): Promise<Chainfetch> {
 		return Chainfetch
 			.get(`${ApiHandler.BASE_URL}${path}${pqso ? stringify<T>(pqso) : ''}`)
-			.set('cookie', decodeURIComponent(await this.fetchAuthCookies()))
+			.set([
+				['cookie', decodeURIComponent(await this.fetchAuthCookies())],
+				['User-Agent', ApiHandler.UserAgent]
+			])
 			.toJSON();
 	}
 
 	public static BASE_URL = ApiBases.V2;
+
+	public static UserAgent = `Monstercat.ts (https://github.com/QuantumlyTangled/Monstercat.ts)`;
 
 }
