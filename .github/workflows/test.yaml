@@ -35,6 +35,7 @@ jobs:
 
   coverageUploadCoveralls:
     name: Upload Coverage results to Coveralls
+    needs: coverageRun
     runs-on: ubuntu-latest
     if: "!(contains(github.event.head_commit.message, '[skip test]') || contains(github.event.head_commit.message, '[skip coverage upload]') || contains(github.event.head_commit.message, '[skip coverage upload coveralls]'))"
     steps:
