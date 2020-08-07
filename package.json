@@ -30,7 +30,7 @@
   "author": "QuantumlyTangled (https://quantumlytangled.com)",
   "license": "MIT",
   "dependencies": {
-    "@favware/querystring": "^6.0.4",
+    "@favware/querystring": "^6.0.5",
     "chainfetch": "^1.2.2",
     "node-fetch": "^2.6.0"
   },

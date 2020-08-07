@@ -280,10 +280,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@favware/querystring@^6.0.4":
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/@favware/querystring/-/querystring-6.0.4.tgz#ceb0d46b0f2dd00ebff695ee3ce081792c2ccc74"
-  integrity sha512-BinAoev1ZVTuH3BeSHq8EF3SARSMC/whzsPT3/V2Ib8zEsl3UAhuUIKpJlPQEtvH0pM8yuGbWbe1vrqK/4UvFw==
+"@favware/querystring@^6.0.5":
+  version "6.0.5"
+  resolved "https://registry.yarnpkg.com/@favware/querystring/-/querystring-6.0.5.tgz#7cb1c08da2e208ca884f440ab0cfd7bc45d9bcdb"
+  integrity sha512-fevtu604wa0Hsa3GZsL6ctkf7TJ5FPYBRuIqeYvCU1aCKuYUnQ8HpfL5/ummxTWm2Gn0su/H73Gz2j7l4BfO5w==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
