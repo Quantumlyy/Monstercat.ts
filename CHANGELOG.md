@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.2 (2020-08-08)
+
+
+### Bug Fixes
+
+* compile errors ([b81bb47](https://github.com/QuantumlyTangled/Monstercat.ts/commit/b81bb47f2672e7c0eef1f2d61dfe96dc880facc4))
+
 ### 0.1.1 (2020-08-08)
 
 ## [0.1.0](https://github.com/QuantumlyTangled/Monstercat.ts/compare/v0.0.37...v0.1.0) (2020-08-08)
