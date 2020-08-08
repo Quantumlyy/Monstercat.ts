@@ -21,13 +21,13 @@ export default {
 			format: 'es',
 			exports: 'named',
 			sourcemap: true
-		}
-		/* {
+		},
+		{
 			file: './dist/index.umd.js',
 			format: 'umd',
 			name: 'Monstercat',
 			sourcemap: true
-		}*/
+		}
 	],
 	plugins: [
 		cleaner({

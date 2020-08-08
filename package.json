@@ -4,6 +4,8 @@
   "description": "The best Monstercat Connect API Wrapper",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
+  "browser": "dist/index.umd.js",
+  "unpkg": "dist/index.umd.js",
   "types": "dist/index.d.ts",
   "author": "QuantumlyTangled (https://quantumlytangled.com)",
   "license": "MIT",
