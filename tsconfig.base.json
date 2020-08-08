@@ -1,0 +1,8 @@
+{
+	"extends": "@quantumly/eslint-config",
+	"compilerOptions": {
+		"resolveJsonModule": true,
+		"module": "ESNext",
+		"declaration": true
+	}
+}
