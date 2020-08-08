@@ -1,3 +1,6 @@
 {
-	"extends": "@quantumly"
+	"extends": "@quantumly",
+	"rules": {
+		"@typescript-eslint/naming-convention": 0
+	}
 }
