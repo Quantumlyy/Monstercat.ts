@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/QuantumlyTangled/Monstercat.ts/compare/v0.0.37...v0.1.0) (2020-08-08)
+
+
+### Features
+
+* commit linting ([6034899](https://github.com/QuantumlyTangled/Monstercat.ts/commit/6034899cd99c55878cd52bd70c276f0170ac9b9a))
+
 ### 0.0.37 (2020-08-05)
 
 ### 0.0.36 (2020-08-05)
