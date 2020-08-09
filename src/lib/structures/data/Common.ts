@@ -1,5 +1,3 @@
-import { enumerable } from '../../util/util';
-
 export interface MonstercatPaginationBase {
 	page: number;
 	limit: number;
@@ -12,7 +10,6 @@ export interface MonstercatPaginationBase {
  */
 export class DataRawBase<T> {
 
-	@enumerable(false)
 	protected readonly data: T;
 
 	public constructor(data: T) {

@@ -1,4 +1,3 @@
-import { enumerable } from './util/util';
 import { ApiHandler } from './structures/ApiHandler';
 
 import { SelfPlaylists, SelfPlaylistsOptions } from './structures/data/SelfPlaylists';
@@ -7,7 +6,6 @@ import { PlaylistPidCatalogOptions, PlaylistPidCatalog } from './structures/data
 
 export class Monstercat {
 
-	@enumerable(false)
 	public readonly api!: ApiHandler;
 
 	/**

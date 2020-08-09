@@ -1,5 +1,5 @@
 import { CookieJar } from '../util/CookieJar';
-import { enumerable, noop } from '../util/util';
+import { noop } from '../util/util';
 import fetch, { Headers, Response } from 'node-fetch';
 import { stringify } from '@favware/querystring';
 
@@ -16,7 +16,6 @@ export class ApiHandler {
 
 	protected authenticated = false;
 
-	@enumerable(false)
 	private AuthenticationCookies!: CookieJar<string>;
 
 	public constructor(authInfo?: AuthenticationInformation) {
