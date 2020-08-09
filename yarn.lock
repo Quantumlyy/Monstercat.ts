@@ -1336,11 +1336,6 @@ caseless@~0.12.0:
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
 
-chainfetch@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/chainfetch/-/chainfetch-1.2.2.tgz#866633c290b3535ff293e5d029eab379d37ab680"
-  integrity sha512-gPq03LcTDYj6aWhzYQb8q8Z+SNJq5FKpsPpEzQG+gCgMP4YyMusFnNvxlnR82Pt6fQ8HkdT1qUFpMaOwZGIIkQ==
-
 chalk@4.1.0, chalk@^4.0.0, chalk@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.0.tgz#4e14870a618d9e2edd97dd8345fd9d9dc315646a"

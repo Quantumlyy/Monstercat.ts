@@ -1,6 +1,6 @@
 import { CookieJar } from '../util/CookieJar';
 import { enumerable, noop } from '../util/util';
-import Chainfetch from 'chainfetch';
+import fetch, { Headers, Response } from 'node-fetch';
 import { stringify } from '@favware/querystring';
 
 export interface AuthenticationInformation {
@@ -31,10 +31,20 @@ export class ApiHandler {
 		if (!this.authenticated && !authInfo) throw new Error('In order to authenticate please pass the appropriate info');
 		if (this.authenticated) return this.AuthenticationCookies;
 
-		const request = await Chainfetch
+		const headers = new Headers();
+		headers.set('User-Agent', ApiHandler.UserAgent);
+		headers.set('Content-Type', 'application/json');
+
+		const request = await fetch(`${ApiHandler.BASE_URL}/signin`, {
+			method: 'post',
+			body: JSON.stringify({ email: authInfo!.email, password: authInfo!.password }),
+			headers
+		});
+
+		/* const request = await Chainfetch
 			.post(`${ApiHandler.BASE_URL}/signin`)
 			.set('User-Agent', ApiHandler.UserAgent)
-			.send({ email: authInfo!.email, password: authInfo!.password });
+			.send({ email: authInfo!.email, password: authInfo!.password }); */
 
 		this.AuthenticationCookies = CookieJar.create(request.headers);
 		this.authenticated = true;
@@ -42,15 +52,19 @@ export class ApiHandler {
 		return this.AuthenticationCookies;
 	}
 
-	public async request<T>(path: string, pqso?: T, authed = true): Promise<Chainfetch> {
-		const headers: string[][] = [['User-Agent', ApiHandler.UserAgent]];
+	public async request<T>(path: string, pqso?: T, authed = true): Promise<Response> {
+		const headers = new Headers([['User-Agent', ApiHandler.UserAgent]]);
 		if (!this.authenticated && authed) throw new Error('In order to authenticate please call the fetchAuth method first');
-		if (this.authenticated && authed) headers.push(['cookie', decodeURIComponent((await this.fetchAuth()).stringify())]);
+		if (this.authenticated && authed) headers.set('cookie', decodeURIComponent((await this.fetchAuth()).stringify()));
 
-		return Chainfetch
+
+		/* return Chainfetch
 			.get(`${ApiHandler.BASE_URL}${path}${pqso ? stringify<T>(pqso) : ''}`)
 			.set(headers)
-			.toJSON();
+			.toJSON(); */
+		return fetch(`${ApiHandler.BASE_URL}${path}${pqso ? stringify<T>(pqso) : ''}`, {
+			headers
+		});
 	}
 
 	public static BASE_URL = ApiBases.V2;

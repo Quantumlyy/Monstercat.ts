@@ -20,15 +20,15 @@ export class Monstercat {
 	}
 
 	public async getSelfPlaylists(options?: SelfPlaylistsOptions): Promise<SelfPlaylists> {
-		return SelfPlaylists.create((await this.api.request('/self/playlists', options)).body);
+		return SelfPlaylists.create(await ((await this.api.request('/self/playlists', options)).json()));
 	}
 
 	public async getPlaylistPid(pid: string): Promise<PlaylistPid> {
-		return PlaylistPid.create((await this.api.request(`/playlist/${pid}`)).body);
+		return PlaylistPid.create(await ((await this.api.request(`/playlist/${pid}`)).json()));
 	}
 
 	public async getPlaylistPidCatalog(pid: string, options?: PlaylistPidCatalogOptions): Promise<PlaylistPidCatalog> {
-		return PlaylistPidCatalog.create((await this.api.request(`/playlist/${pid}/catalog`, options)).body);
+		return PlaylistPidCatalog.create(await ((await this.api.request(`/playlist/${pid}/catalog`, options)).json()));
 	}
 
 }
