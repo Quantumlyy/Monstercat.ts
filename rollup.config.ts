@@ -41,9 +41,9 @@ export default {
 			compress: { drop_console: !Reflect.has(process.env, 'ROLLUP_WATCH') },
 			output: { comments: false }
 		}),
+		nodeResolve({ preferBuiltins: true }),
 		commonjs(),
 		json(),
-		nodeResolve({ preferBuiltins: false }),
 		nodePolyfills()
 	]
 };
