@@ -33,6 +33,10 @@ export default {
 		cleaner({
 			targets: ['./dist/']
 		}),
+		commonjs(),
+		json(),
+		nodeResolve({ preferBuiltins: true }),
+		nodePolyfills(),
 		typescript({ tsconfig: resolveDir(__dirname, 'src', 'tsconfig.json') }),
 		terser({
 			ecma: 2019,
@@ -40,10 +44,6 @@ export default {
 			// eslint-disable-next-line @typescript-eslint/naming-convention
 			compress: { drop_console: !Reflect.has(process.env, 'ROLLUP_WATCH') },
 			output: { comments: false }
-		}),
-		nodeResolve({ preferBuiltins: true }),
-		commonjs(),
-		json(),
-		nodePolyfills()
+		})
 	]
 };
