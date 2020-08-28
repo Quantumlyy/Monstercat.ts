@@ -1,6 +1,6 @@
 {
   "name": "monstercat.ts",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "The best Monstercat Connect API Wrapper",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
