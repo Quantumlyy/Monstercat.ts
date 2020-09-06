@@ -414,10 +414,10 @@
   resolved "https://registry.yarnpkg.com/@commitlint/types/-/types-9.1.2.tgz#d05f66db03e3a3638a654e8badf2deb489eb220d"
   integrity sha512-r3fwVbVH+M8W0qYlBBZFsUwKe6NT5qvz+EmU7sr8VeN1cQ63z+3cfXyTo7WGGEMEgKiT0jboNAK3b1FZp8k9LQ==
 
-"@favware/querystring@^6.0.6":
-  version "6.0.6"
-  resolved "https://registry.yarnpkg.com/@favware/querystring/-/querystring-6.0.6.tgz#38ef4d0a1de1662f4f148f44f60548ba5ec6403c"
-  integrity sha512-6DO5OXqktVLZlWaKsEvubquHBVvzNwuj0V+FeBJ6bMbvF83TA6TH/O5UD48h7gFpqBxVN/eV1TnE34y2kUiAAA==
+"@favware/querystring@^6.0.7":
+  version "6.0.7"
+  resolved "https://registry.yarnpkg.com/@favware/querystring/-/querystring-6.0.7.tgz#d3d254b45f31bf3d900d453d74db2156ff87499d"
+  integrity sha512-3easjpfDIGhs06ckbOb864M7+I2dC+Vikkvd35uhVfa/MjU6ADIpaBfdrdoJ7425LQFWcS1NlOUs5A+VJ2nBTw==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
