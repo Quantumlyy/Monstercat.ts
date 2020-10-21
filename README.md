@@ -9,12 +9,12 @@
 ---
 
 ## Project Status
-[![License](https://img.shields.io/github/license/quantumlytangled/monstercat.ts?style=for-the-badge&logo=github)](https://github.com/QuantumlyTangled/Monstercat.ts/blob/master/LICENCE.md)
+[![License](https://img.shields.io/github/license/quantumlytangled/monstercat.ts?style=for-the-badge&logo=github)](https://github.com/QuantumlyTangled/Monstercat.ts/blob/main/LICENCE.md)
 [![Documentation](https://img.shields.io/github/workflow/status/quantumlytangled/monstercat.ts/Documentation?label=Documentation&style=for-the-badge&logo=github)](https://github.com/QuantumlyTangled/Monstercat.ts/actions?query=workflow%3ADocumentation)
 [![Publishing](https://img.shields.io/github/workflow/status/quantumlytangled/monstercat.ts/Publish?label=Publishing&style=for-the-badge&logo=github)](https://github.com/QuantumlyTangled/Monstercat.ts/actions?query=workflow%3APublish)
 [![Code ChecK](https://img.shields.io/github/workflow/status/quantumlytangled/monstercat.ts/Code%20Check?label=Code%20Check&logo=github&style=for-the-badge)](https://github.com/QuantumlyTangled/Monstercat.ts/actions?query=workflow%3A"Code+Check")
 [![Test](https://img.shields.io/github/workflow/status/quantumlytangled/monstercat.ts/Test?label=Test&logo=github&style=for-the-badge)](https://github.com/QuantumlyTangled/Monstercat.ts/actions?query=workflow%3ATest)
-[![Coverage](https://img.shields.io/coveralls/github/QuantumlyTangled/Monstercat.ts/master?logo=coveralls&style=for-the-badge)](https://coveralls.io/github/QuantumlyTangled/Monstercat.ts)
+[![Coverage](https://img.shields.io/coveralls/github/QuantumlyTangled/Monstercat.ts/main?logo=coveralls&style=for-the-badge)](https://coveralls.io/github/QuantumlyTangled/Monstercat.ts)
 
 ## Package Sizes
 [![Minzipped](https://img.shields.io/bundlephobia/minzip/monstercat.ts?style=for-the-badge&logo=npm)](https://bundlephobia.com/result?p=monstercat.ts)

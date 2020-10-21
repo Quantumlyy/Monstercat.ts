@@ -3,7 +3,7 @@ name: Publish
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - 'src/**'
       - '.github/**'
@@ -39,7 +39,7 @@ jobs:
       - name: Generate and Commit changelog
         run: |
           yarn sversion
-          git push --follow-tags origin master
+          git push --follow-tags origin main
 
   Publish-NPM:
     name: "Publish to NPM"
