@@ -88,15 +88,15 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="apihandler.html#authenticationcookies" class="tsd-kind-icon">Authentication<wbr>Cookies</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="apihandler.html#authinfo" class="tsd-kind-icon">auth<wbr>Info</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="apihandler.html#authenticated" class="tsd-kind-icon">authenticated</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="apihandler.html#base_url" class="tsd-kind-icon">BASE_<wbr>URL</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="apihandler.html#useragent" class="tsd-kind-icon">User<wbr>Agent</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="apihandler.html#fetchauth" class="tsd-kind-icon">fetch<wbr>Auth</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="apihandler.html#fetchauthcookies" class="tsd-kind-icon">fetch<wbr>Auth<wbr>Cookies</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="apihandler.html#request" class="tsd-kind-icon">request</a></li>
 							</ul>
 						</section>
@@ -109,19 +109,19 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Api<wbr>Handler<span class="tsd-signature-symbol">(</span>authInfo<span class="tsd-signature-symbol">: </span><a href="../interfaces/authenticationinformation.html" class="tsd-signature-type">AuthenticationInformation</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="apihandler.html" class="tsd-signature-type">ApiHandler</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Api<wbr>Handler<span class="tsd-signature-symbol">(</span>authInfo<span class="tsd-signature-symbol">?: </span><a href="../interfaces/authenticationinformation.html" class="tsd-signature-type">AuthenticationInformation</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="apihandler.html" class="tsd-signature-type">ApiHandler</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/QuantumlyTangled/Monstercat.ts/blob/0d872cd/src/lib/structures/ApiHandler.ts#L21">src/lib/structures/ApiHandler.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/QuantumlyTangled/Monstercat.ts/blob/4457857/src/lib/structures/ApiHandler.ts#L19">src/lib/structures/ApiHandler.ts:19</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>authInfo: <a href="../interfaces/authenticationinformation.html" class="tsd-signature-type">AuthenticationInformation</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> authInfo: <a href="../interfaces/authenticationinformation.html" class="tsd-signature-type">AuthenticationInformation</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="apihandler.html" class="tsd-signature-type">ApiHandler</a></h4>
@@ -137,17 +137,17 @@
 					<div class="tsd-signature tsd-kind-icon">Authentication<wbr>Cookies<span class="tsd-signature-symbol">:</span> <a href="cookiejar.html" class="tsd-signature-type">CookieJar</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/QuantumlyTangled/Monstercat.ts/blob/0d872cd/src/lib/structures/ApiHandler.ts#L21">src/lib/structures/ApiHandler.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/QuantumlyTangled/Monstercat.ts/blob/4457857/src/lib/structures/ApiHandler.ts#L19">src/lib/structures/ApiHandler.ts:19</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="authinfo" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> auth<wbr>Info</h3>
-					<div class="tsd-signature tsd-kind-icon">auth<wbr>Info<span class="tsd-signature-symbol">:</span> <a href="../interfaces/authenticationinformation.html" class="tsd-signature-type">AuthenticationInformation</a></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="authenticated" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> authenticated</h3>
+					<div class="tsd-signature tsd-kind-icon">authenticated<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/QuantumlyTangled/Monstercat.ts/blob/0d872cd/src/lib/structures/ApiHandler.ts#L18">src/lib/structures/ApiHandler.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/QuantumlyTangled/Monstercat.ts/blob/4457857/src/lib/structures/ApiHandler.ts#L17">src/lib/structures/ApiHandler.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -157,7 +157,17 @@
 					<div class="tsd-signature tsd-kind-icon">BASE_<wbr>URL<span class="tsd-signature-symbol">:</span> <a href="../enums/apibases.html#v2" class="tsd-signature-type">V2</a><span class="tsd-signature-symbol"> = ApiBases.V2</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/QuantumlyTangled/Monstercat.ts/blob/0d872cd/src/lib/structures/ApiHandler.ts#L56">src/lib/structures/ApiHandler.ts:56</a></li>
+							<li>Defined in <a href="https://github.com/QuantumlyTangled/Monstercat.ts/blob/4457857/src/lib/structures/ApiHandler.ts#L69">src/lib/structures/ApiHandler.ts:69</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="useragent" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> User<wbr>Agent</h3>
+					<div class="tsd-signature tsd-kind-icon">User<wbr>Agent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &#x60;Monstercat.ts (https://github.com/QuantumlyTangled/Monstercat.ts)&#x60;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/QuantumlyTangled/Monstercat.ts/blob/4457857/src/lib/structures/ApiHandler.ts#L71">src/lib/structures/ApiHandler.ts:71</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -168,33 +178,22 @@
 					<a name="fetchauth" class="tsd-anchor"></a>
 					<h3>fetch<wbr>Auth</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">fetch<wbr>Auth<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="cookiejar.html" class="tsd-signature-type">CookieJar</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">fetch<wbr>Auth<span class="tsd-signature-symbol">(</span>authInfo<span class="tsd-signature-symbol">?: </span><a href="../interfaces/authenticationinformation.html" class="tsd-signature-type">AuthenticationInformation</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="cookiejar.html" class="tsd-signature-type">CookieJar</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/QuantumlyTangled/Monstercat.ts/blob/0d872cd/src/lib/structures/ApiHandler.ts#L31">src/lib/structures/ApiHandler.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/QuantumlyTangled/Monstercat.ts/blob/4457857/src/lib/structures/ApiHandler.ts#L29">src/lib/structures/ApiHandler.ts:29</a></li>
 								</ul>
 							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> authInfo: <a href="../interfaces/authenticationinformation.html" class="tsd-signature-type">AuthenticationInformation</a></h5>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="cookiejar.html" class="tsd-signature-type">CookieJar</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="fetchauthcookies" class="tsd-anchor"></a>
-					<h3>fetch<wbr>Auth<wbr>Cookies</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">fetch<wbr>Auth<wbr>Cookies<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/QuantumlyTangled/Monstercat.ts/blob/0d872cd/src/lib/structures/ApiHandler.ts#L45">src/lib/structures/ApiHandler.ts:45</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -202,13 +201,13 @@
 					<a name="request" class="tsd-anchor"></a>
 					<h3>request</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">request&lt;T&gt;<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, pqso<span class="tsd-signature-symbol">?: </span><a href="" class="tsd-signature-type">T</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Chainfetch</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">request&lt;T&gt;<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, pqso<span class="tsd-signature-symbol">?: </span><a href="" class="tsd-signature-type">T</a>, authed<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Response</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/QuantumlyTangled/Monstercat.ts/blob/0d872cd/src/lib/structures/ApiHandler.ts#L49">src/lib/structures/ApiHandler.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/QuantumlyTangled/Monstercat.ts/blob/4457857/src/lib/structures/ApiHandler.ts#L54">src/lib/structures/ApiHandler.ts:54</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -225,8 +224,11 @@
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> pqso: <a href="" class="tsd-signature-type">T</a></h5>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> authed: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
+								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Chainfetch</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Response</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -256,17 +258,17 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="apihandler.html#authenticationcookies" class="tsd-kind-icon">Authentication<wbr>Cookies</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="apihandler.html#authinfo" class="tsd-kind-icon">auth<wbr>Info</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="apihandler.html#authenticated" class="tsd-kind-icon">authenticated</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
 								<a href="apihandler.html#base_url" class="tsd-kind-icon">BASE_<wbr>URL</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="apihandler.html#fetchauth" class="tsd-kind-icon">fetch<wbr>Auth</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="apihandler.html#useragent" class="tsd-kind-icon">User<wbr>Agent</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="apihandler.html#fetchauthcookies" class="tsd-kind-icon">fetch<wbr>Auth<wbr>Cookies</a>
+								<a href="apihandler.html#fetchauth" class="tsd-kind-icon">fetch<wbr>Auth</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
 								<a href="apihandler.html#request" class="tsd-kind-icon">request</a>
@@ -340,9 +342,6 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/selfplaylistsoptions.html" class="tsd-kind-icon">Self<wbr>Playlists<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-private">
-						<a href="../globals.html#enumerable" class="tsd-kind-icon">enumerable</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-private">
 						<a href="../globals.html#noop" class="tsd-kind-icon">noop</a>
