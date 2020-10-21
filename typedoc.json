@@ -1,7 +1,12 @@
 {
     "inputFiles": ["./src"],
+	"readme": "./README.md",
     "tsconfig": "./src/tsconfig.json",
     "name": "Monstercat.ts",
-    "mode": "library",
+    "exclude": [
+		"**/node_modules/**",
+		"tests/**"
+	],
+    "mode": "file",
     "out": "docs"
 }
