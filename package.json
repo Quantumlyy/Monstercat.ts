@@ -31,7 +31,7 @@
     "workflow:publish:github:pipenpmrc:linux": "echo @quantumlytangled:registry=https://npm.pkg.github.com/ >> .npmrc"
   },
   "dependencies": {
-    "@favware/querystring": "^7.0.1",
+    "@favware/querystring": "^7.0.3",
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
