@@ -7,16 +7,16 @@
   "browser": "dist/index.umd.js",
   "unpkg": "dist/index.umd.js",
   "types": "dist/index.d.ts",
-  "author": "QuantumlyTangled (https://quantumlytangled.com)",
+  "author": "Quantumlyy (https://Quantumlyy.com)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/QuantumlyTangled/Monstercat.ts.git"
+    "url": "git+https://github.com/Quantumlyy/Monstercat.ts.git"
   },
   "bugs": {
-    "url": "https://github.com/QuantumlyTangled/Monstercat.ts/issues"
+    "url": "https://github.com/Quantumlyy/Monstercat.ts/issues"
   },
-  "homepage": "https://github.com/QuantumlyTangled/Monstercat.ts#readme",
+  "homepage": "https://github.com/Quantumlyy/Monstercat.ts#readme",
   "scripts": {
     "build": "rollup -c rollup.config.ts",
     "build:preparePackage": "npx cpx package.json src",
@@ -27,42 +27,42 @@
     "documentation:generate": "typedoc --options ./typedoc.json --exclude \"src/test.ts\"",
     "workflow:documentation:generate": "yarn run documentation:generate",
     "workflow:documentation:clean:linux": "rm -rf src .eslintrc.json .eslintignore .editorconfig .npmignore yarn.lock .github.npmrc .gitignore node_modules",
-    "workflow:publish:github:replacename:linux": "sed -i '2s/.*/\"name\": \"@quantumlytangled/monstercat.ts\",/' package.json",
-    "workflow:publish:github:pipenpmrc:linux": "echo @quantumlytangled:registry=https://npm.pkg.github.com/ >> .npmrc"
+    "workflow:publish:github:replacename:linux": "sed -i '2s/.*/\"name\": \"@Quantumlyy/monstercat.ts\",/' package.json",
+    "workflow:publish:github:pipenpmrc:linux": "echo @Quantumlyy:registry=https://npm.pkg.github.com/ >> .npmrc"
   },
   "dependencies": {
-    "@favware/querystring": "^7.0.1",
-    "node-fetch": "^2.6.1"
+    "@favware/querystring": "^7.0.3",
+    "node-fetch": "^3.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^11.0.0",
-    "@commitlint/config-conventional": "^11.0.0",
+    "@commitlint/cli": "^13.2.0",
+    "@commitlint/config-conventional": "^13.2.0",
     "@quantumly/eslint-config": "^1.1.0",
-    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-commonjs": "^21.0.0",
     "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^9.0.0",
-    "@types/jest": "^26.0.23",
-    "@types/node": "^14.14.44",
-    "@types/node-fetch": "^2.5.10",
-    "@typescript-eslint/eslint-plugin": "^4.23.0",
-    "@typescript-eslint/parser": "^4.23.0",
+    "@rollup/plugin-node-resolve": "^13.0.5",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.10.2",
+    "@types/node-fetch": "^3.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^7.26.0",
-    "husky": "^4.3.8",
-    "jest": "^26.6.3",
-    "jest-circus": "^26.6.3",
-    "lint-staged": "^10.5.4",
-    "rollup": "^2.47.0",
+    "eslint": "^7.32.0",
+    "husky": "4.3.8",
+    "jest": "^27.2.4",
+    "jest-circus": "^27.2.4",
+    "lint-staged": "^11.1.2",
+    "rollup": "^2.58.0",
     "rollup-plugin-cleaner": "^1.0.0",
     "rollup-plugin-node-polyfills": "^0.2.1",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.28.0",
-    "standard-version": "^9.3.0",
-    "ts-jest": "^26.5.6",
-    "ts-node": "^9.1.1",
-    "typedoc": "0.19.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "standard-version": "^9.3.1",
+    "ts-jest": "^27.0.5",
+    "ts-node": "^10.2.1",
+    "typedoc": "0.22.4",
     "typedoc-plugin-nojekyll": "^1.0.1",
-    "typescript": "^4.2.4"
+    "typescript": "^4.4.3"
   },
   "files": [
     "dist",
@@ -76,7 +76,7 @@
     "documented",
     "monstercat",
     "quantumlyy",
-    "quantumlytangled"
+    "Quantumlyy"
   ],
   "engines": {
     "node": ">=12",

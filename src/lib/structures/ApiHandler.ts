@@ -16,7 +16,7 @@ export class ApiHandler {
 
 	protected authenticated = false;
 
-	private AuthenticationCookies!: CookieJar<string>;
+	private AuthenticationCookies!: CookieJar;
 
 	public constructor(authInfo?: AuthenticationInformation) {
 		if (authInfo) {
@@ -68,6 +68,6 @@ export class ApiHandler {
 
 	public static BASE_URL = ApiBases.V2;
 
-	public static UserAgent = `Monstercat.ts (https://github.com/QuantumlyTangled/Monstercat.ts)`;
+	public static UserAgent = `Monstercat.ts (https://github.com/Quantumlyy/Monstercat.ts)`;
 
 }

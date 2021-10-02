@@ -53,16 +53,16 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* compile errors ([b81bb47](https://github.com/QuantumlyTangled/Monstercat.ts/commit/b81bb47f2672e7c0eef1f2d61dfe96dc880facc4))
+* compile errors ([b81bb47](https://github.com/Quantumlyy/Monstercat.ts/commit/b81bb47f2672e7c0eef1f2d61dfe96dc880facc4))
 
 ### 0.1.1 (2020-08-08)
 
-## [0.1.0](https://github.com/QuantumlyTangled/Monstercat.ts/compare/v0.0.37...v0.1.0) (2020-08-08)
+## [0.1.0](https://github.com/Quantumlyy/Monstercat.ts/compare/v0.0.37...v0.1.0) (2020-08-08)
 
 
 ### Features
 
-* commit linting ([6034899](https://github.com/QuantumlyTangled/Monstercat.ts/commit/6034899cd99c55878cd52bd70c276f0170ac9b9a))
+* commit linting ([6034899](https://github.com/Quantumlyy/Monstercat.ts/commit/6034899cd99c55878cd52bd70c276f0170ac9b9a))
 
 ### 0.0.37 (2020-08-05)
 
@@ -126,6 +126,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### 0.0.7 (2020-07-09)
 
-### [0.0.6](https://github.com/QuantumlyTangled/Monstercat.ts/compare/v0.0.5...v0.0.6) (2020-07-09)
+### [0.0.6](https://github.com/Quantumlyy/Monstercat.ts/compare/v0.0.5...v0.0.6) (2020-07-09)
 
 ### 0.0.5 (2020-07-09)
