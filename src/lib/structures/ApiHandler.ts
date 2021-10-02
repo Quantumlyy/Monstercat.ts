@@ -68,6 +68,6 @@ export class ApiHandler {
 
 	public static BASE_URL = ApiBases.V2;
 
-	public static UserAgent = `Monstercat.ts (https://github.com/QuantumlyTangled/Monstercat.ts)`;
+	public static UserAgent = `Monstercat.ts (https://github.com/Quantumlyy/Monstercat.ts)`;
 
 }

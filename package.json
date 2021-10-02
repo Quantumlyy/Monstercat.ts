@@ -7,16 +7,16 @@
   "browser": "dist/index.umd.js",
   "unpkg": "dist/index.umd.js",
   "types": "dist/index.d.ts",
-  "author": "QuantumlyTangled (https://quantumlytangled.com)",
+  "author": "Quantumlyy (https://Quantumlyy.com)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/QuantumlyTangled/Monstercat.ts.git"
+    "url": "git+https://github.com/Quantumlyy/Monstercat.ts.git"
   },
   "bugs": {
-    "url": "https://github.com/QuantumlyTangled/Monstercat.ts/issues"
+    "url": "https://github.com/Quantumlyy/Monstercat.ts/issues"
   },
-  "homepage": "https://github.com/QuantumlyTangled/Monstercat.ts#readme",
+  "homepage": "https://github.com/Quantumlyy/Monstercat.ts#readme",
   "scripts": {
     "build": "rollup -c rollup.config.ts",
     "build:preparePackage": "npx cpx package.json src",
@@ -27,8 +27,8 @@
     "documentation:generate": "typedoc --options ./typedoc.json --exclude \"src/test.ts\"",
     "workflow:documentation:generate": "yarn run documentation:generate",
     "workflow:documentation:clean:linux": "rm -rf src .eslintrc.json .eslintignore .editorconfig .npmignore yarn.lock .github.npmrc .gitignore node_modules",
-    "workflow:publish:github:replacename:linux": "sed -i '2s/.*/\"name\": \"@quantumlytangled/monstercat.ts\",/' package.json",
-    "workflow:publish:github:pipenpmrc:linux": "echo @quantumlytangled:registry=https://npm.pkg.github.com/ >> .npmrc"
+    "workflow:publish:github:replacename:linux": "sed -i '2s/.*/\"name\": \"@Quantumlyy/monstercat.ts\",/' package.json",
+    "workflow:publish:github:pipenpmrc:linux": "echo @Quantumlyy:registry=https://npm.pkg.github.com/ >> .npmrc"
   },
   "dependencies": {
     "@favware/querystring": "^7.0.3",
@@ -76,7 +76,7 @@
     "documented",
     "monstercat",
     "quantumlyy",
-    "quantumlytangled"
+    "Quantumlyy"
   ],
   "engines": {
     "node": ">=12",
