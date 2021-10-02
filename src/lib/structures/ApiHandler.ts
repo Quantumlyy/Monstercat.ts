@@ -16,7 +16,7 @@ export class ApiHandler {
 
 	protected authenticated = false;
 
-	private AuthenticationCookies!: CookieJar<string>;
+	private AuthenticationCookies!: CookieJar;
 
 	public constructor(authInfo?: AuthenticationInformation) {
 		if (authInfo) {

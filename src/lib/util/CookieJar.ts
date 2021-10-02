@@ -6,7 +6,7 @@ import { Headers } from 'node-fetch';
  * @internal
  * @private
  */
-export class CookieJar<K, V = string> extends Map<K, V> {
+export class CookieJar<K = string, V = string> extends Map<K, V> {
 
 	public constructor(iterable: ReadonlyArray<[K, V]>) {
 		iterable = iterable
