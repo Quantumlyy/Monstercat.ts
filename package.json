@@ -31,7 +31,7 @@
     "workflow:publish:github:pipenpmrc:linux": "echo @Quantumlyy:registry=https://npm.pkg.github.com/ >> .npmrc"
   },
   "dependencies": {
-    "@favware/querystring": "^7.0.3",
+    "@favware/querystring": "^7.0.4",
     "node-fetch": "^3.0.0"
   },
   "devDependencies": {
